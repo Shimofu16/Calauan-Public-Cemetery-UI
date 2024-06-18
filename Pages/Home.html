@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calauan Public Cemetery</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#A844B9",
+            secondary: "#F7F7F7",
+            darker: "#191B1E",
+          },
+          screens: {
+            tablet: "769px", // Custom tablet breakpoint
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="stylesheet" href="../Assets/datatables/dataTables.tailwindcss.min.css" />
+  <link rel="stylesheet" href="../Assets/jquery/jquery.dataTables.min.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-gray-100">
+  <header>
+    <nav class="bg-primary fixed w-full z-20 top-0 start-0">
+      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="#home" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img src="../Assets/images/logo.png" class="h-10 bg-white rounded-full" alt="Logo" loading="lazy" />
+
+          <span class="self-center text-2xl font-semibold whitespace-nowrap text-white hidden lg:block">
+            Calauan Public Cemetery
+          </span>
+        </a>
+        <!-- <div class="flex md:order-2 block tablet:none">
+          <a href="#"
+            class="text-white border border-white hover:text-primary hover:bg-white focus:bg-white focus:ring-4 focus:outline-none focus:ring-primary font-medium rounded-lg text-sm px-4 py-2 text-center bg-transparent transition-colors duration-300">
+            Login
+          </a>
+
+
+        </div> -->
+        <button data-collapse-toggle="navbar-search" type="button"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-white focus:outline-none focus:ring-2 focus:ring-white-200 text-white hovber:text-primary focus:text-primary hover:bg-white focus:ring-gray-600"
+          aria-controls="navbar-search" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15"></path>
+          </svg>
+        </button>
+        <div class="hidden w-full md:block md:w-auto" id="navbar-search">
+          <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0">
+            <li>
+              <a href="#home"
+                class="block py-1 px-2 mt-2 sm:mt-0 rounded hover:bg-white hover:text-primary bg-white text-primary"
+                aria-current="page">Home</a>
+            </li>
+            <li>
+              <a href="#about"
+                class="block py-1 px-2 mt-2 sm:mt-0 rounded hover:bg-white hover:text-primary text-white">
+                About
+              </a>
+            </li>
+            <li>
+              <a href="#rules"
+                class="block py-1 px-2 mt-2 sm:mt-0 rounded hover:bg-white hover:text-primary text-white">
+                Rules
+              </a>
+            </li>
+            <li>
+              <a href="#memorials"
+                class="block py-1 px-2 mt-2 sm:mt-0 rounded hover:bg-white hover:text-primary text-white">
+                Memorials
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="h-screen w-full">
+    <section
+      class="bg-center bg-no-repeat bg-cover bg-[url('../Assets/images/cemetery.jpg')] bg-gray-400 bg-blend-multiply h-screen"
+      id="home">
+      <div class="px-5 sm:px-10 lg:px-20 mx-auto text-center py-24 lg:py-56">
+        <h1
+          class="mb-4 mt-20 tablet:mt-0 text-2xl font-extrabold tracking-tight leading-none text-white md:text-4xl lg:text-5xl">
+          Welcome to Public Cemetery of Calauan
+        </h1>
+        <h1 class="mb-4 text-2xl font-extrabold tracking-tight leading-none text-white md:text-4xl lg:text-5xl">
+          Information Management System
+        </h1>
+        <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
+          corporis omnis et architecto magnam nisi vitae eos, labore maxime.
+          Reprehenderit a nam qui ex, molestiae placeat nostrum quisquam amet
+          nihil?
+        </p>
+      </div>
+    </section>
+
+    <section class="container mx-auto px-5 mb-[50px]" id="about">
+      <h1 class="text-center text-2xl font-semibold md:text-3xl lg:text-4xl text-primary mb-10 tablet:mb-20 pt-20">
+        About
+      </h1>
+      <div class="grid grid-cols-1 tablet:grid-cols-2 gap-4 justify-center items-center">
+        <div class="order-2 tablet:order-1 w-full tablet:h-full max-h-full shadow-md sm:rounded-lg">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d967.228432929685!2d121.31072216963632!3d14.14116919914331!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTTCsDA4JzI4LjIiTiAxMjHCsDE4JzQwLjkiRQ!5e0!3m2!1sen!2sph!4v1718544541160!5m2!1sen!2sph"
+            height="400" style="border: 0; width: 100%" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" class="tablet:h-full"></iframe>
+        </div>
+        <div class="order-1 tablet:order-2 w-full">
+          <div class="shadow-md sm:rounded-lg bg-white p-5">
+            <h1 class="text-center text-2xl font-semibold md:text-3xl lg:text-4xl mb-5">
+              <span class="text-black"> Calauan </span>
+              <span class="text-primary"> Public Cemetery </span>
+            </h1>
+            <p class="text-justify md:px-10 mb-5">
+              The Calauan Public Cemetery holds profound significance as the
+              final resting place for the deceased individuals of the Calauan
+              community. This place is thoughtfully divided into two distinct
+              areas. The careful documentation of burial details within the
+              Calauan Public Cemetery is entrusted to logbooks and excel.
+              Notably, in the older section, specific tombs lack essential
+              information regarding the identities of the deceased individuals
+              laid to rest. Unraveling this aspect forms a crucial part of
+              understanding the historical and communal nuances embedded in
+              the cemetery's legacy, which is the focus of our study. The
+              cemetery is experiencing a rapid increase in burial demand,
+              leading to overcrowded gravesites and a shortage of available
+              space. This not only compromises the dignity of the deceased but
+              also poses logistical challenges for cemetery management. The
+              lack of elaborate within the cemetery.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container mx-auto px-5 mb-[50px]" id="rules">
+      <h1 class="text-center text-2xl font-semibold md:text-3xl lg:text-4xl text-primary mb-10 tablet:mb-20 pt-20">
+        Rules
+      </h1>
+      <div class="flex justify-center items-center">
+        <div class="w-fit flex flex-col justify-center items-center bg-white shadow p-10 md:p-16">
+          <h1 class="text-center text-2xl font-semibold mb-5">
+            The following guidelines are prohibited inside the Cemetery
+          </h1>
+  
+          <div class="grid grid-cols-1 md:grid-cols-2  grid-rows-2 gap-2">
+            <div>
+              <div class="rounded-text-center flex items-center">
+                <img src="../Assets/images/shooting.png" alt="weapons" srcset="weapons icon"
+                  style="height: 40px; width: 40px" />
+                <h2 class="font-semibold ms-3">
+                  Firearms and any sharp objects
+                </h2>
+              </div>
+            </div>
+            <div>
+              <div class="rounded-text-center flex items-center">
+                <img src="../Assets/images/flammable.png" alt="flammable" srcset="flammable icon"
+                  style="height: 40px; width: 40px" />
+                <h2 class="font-semibold ms-3">Flammable materials</h2>
+              </div>
+            </div>
+            <div>
+              <div class="rounded-text-center flex items-center">
+                <img src="../Assets/images/no-drinks.png" alt="drinks" srcset="drinks icon"
+                  style="height: 40px; width: 40px" />
+                <h2 class="font-semibold ms-3">Alcoholic beverages</h2>
+              </div>
+            </div>
+            <div>
+              <div class="rounded-text-center flex items-center">
+                <img src="../Assets/images/forbidden-sign.png" alt="drinks" srcset="drinks icon"
+                  style="height: 40px; width: 40px" />
+                <h2 class="font-semibold ms-3">
+                  Videoke or any sound system that will cause loud sounds
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <section class="container mx-auto px-5 pb-52" id="memorials">
+      <h1 class="text-center text-2xl font-semibold md:text-3xl lg:text-4xl text-primary mb-10 tablet:mb-20 pt-20">
+        Memorials
+      </h1>
+      <div class="relative overflow-x-auto shadow-md sm:rounded-lg bg-white p-7">
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500 data-table">
+          <thead class="text-xs text-gray-700 uppercase">
+            <tr>
+              <th scope="col" class="px-6 py-3">Name</th>
+              <th scope="col" class="px-6 py-3">Date of Death</th>
+              <th scope="col" class="px-6 py-3">Block Number</th>
+              <th scope="col" class="px-6 py-3">Lot Number</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b hover:bg-gray-50">
+              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                Juan D. Tamad
+              </th>
+              <td class="px-6 py-4">April 01, 2024</td>
+              <td class="px-6 py-4">Blk 1</td>
+              <td class="px-6 py-4">Lot 2</td>
+            </tr>
+            <tr class="border-b hover:bg-gray-50">
+              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                Juan D. Tamad
+              </th>
+              <td class="px-6 py-4">April 01, 2024</td>
+              <td class="px-6 py-4">Blk 1</td>
+              <td class="px-6 py-4">Lot 2</td>
+            </tr>
+            <tr class="border-b hover:bg-gray-50">
+              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                Juan D. Tamad
+              </th>
+              <td class="px-6 py-4">April 01, 2024</td>
+              <td class="px-6 py-4">Blk 1</td>
+              <td class="px-6 py-4">Lot 2</td>
+            </tr>
+            <tr class="border-b hover:bg-gray-50">
+              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                Juan D. Tamad
+              </th>
+              <td class="px-6 py-4">April 01, 2024</td>
+              <td class="px-6 py-4">Blk 1</td>
+              <td class="px-6 py-4">Lot 2</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+  <script src="../Assets/jquery/jquery.min.js"></script>
+  <script src="../Assets/datatables/jquery.datatables.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      const dataTableOptions = {
+        info: false,
+        ordering: false,
+      };
+
+      $(".data-table").DataTable(dataTableOptions);
+    });
+  </script>
+</body>
+
+</html>
