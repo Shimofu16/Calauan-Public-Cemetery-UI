@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PCC-IMS - Employees</title>
+    <title>PCC-IMS - Informants</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -15,6 +15,7 @@
                         primaryDarker: "#863694",
                         secondary: "#F7F7F7",
                         darker: "#191B1E",
+                        info: "#17a2b8", // Added info color
                     },
                     screens: {
                         tablet: "769px", // Custom tablet breakpoint
@@ -119,8 +120,8 @@
                 </li>
                 <li>
                     <a href="employees_index.html"
-                        class="flex items-center p-2 text-white bg-primary rounded-lg hover:bg-primary hover:text-white group">
-                        <svg class="w-5 h-5 text-white bg-primary transition duration-75 group-hover:text-white "
+                        class="flex items-center p-2 text-primary rounded-lg hover:bg-primary hover:text-white group">
+                        <svg class="flex-shrink-0 w-5 h-5 text-primary transition duration-75 group-hover:text-white "
                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             viewBox="0 0 640 512">
 
@@ -129,7 +130,7 @@
                         </svg>
                         <span class="flex-1 ms-3 whitespace-nowrap">Employees</span>
                         <span
-                            class="inline-flex items-center justify-center px-2 ms-3 text-sm font-medium text-primary bg-white  group-hover:bg-white  group-hover:text-primary rounded-full">
+                            class="inline-flex items-center justify-center px-2 ms-3 text-sm font-medium text-white bg-primary  group-hover:bg-white  group-hover:text-primary rounded-full">
                             10
                         </span>
                     </a>
@@ -137,7 +138,6 @@
                 <li>
                     <a href="slot_index.html"
                         class="flex items-center p-2 text-primary rounded-lg hover:bg-primary hover:text-white group">
-
                         <svg class="flex-shrink-0 w-5 h-5 text-primary transition duration-75 group-hover:text-white "
                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             viewBox="0 0 576 512">
@@ -155,8 +155,8 @@
                 </li>
                 <li>
                     <a href="informants_index.html"
-                        class="flex items-center p-2 text-primary rounded-lg hover:bg-primary hover:text-white group">
-                        <svg class="flex-shrink-0 w-5 h-5 text-primary transition duration-75 group-hover:text-white "
+                        class="flex items-center p-2 text-white bg-primary rounded-lg hover:bg-primary hover:text-white group">
+                        <svg class="w-5 h-5 text-white bg-primary transition duration-75 group-hover:text-white "
                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             viewBox="0 0 640 512">
 
@@ -194,19 +194,19 @@
 
     <div class="p-4 sm:ml-64">
         <div class="p-4 rounded-lg mt-14">
-            <h1 class="text-3xl text-primary font-semibold mb-4 ">Employee List</h1>
+            <h1 class="text-3xl text-primary font-semibold mb-4 ">Informants List</h1>
             <div class="bg-white rounded p-5">
                 <div class="flex justify-between items-center">
                     <div>
                         <!-- Modal toggle -->
-                        <button data-modal-target="add-employee-modal" data-modal-toggle="add-employee-modal"
+                        <button data-modal-target="add-informant-modal" data-modal-toggle="add-informant-modal"
                             class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-3"
                             type="button">
-                            Add Employee
+                            Add Informant
                         </button>
 
                         <!-- Main modal -->
-                        <div id="add-employee-modal" tabindex="-1" aria-hidden="true"
+                        <div id="add-informant-modal" tabindex="-1" aria-hidden="true"
                             class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
                             <div class="relative p-4 w-full max-w-2xl max-h-full">
                                 <!-- Modal content -->
@@ -214,11 +214,11 @@
                                     <!-- Modal header -->
                                     <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
                                         <h3 class="text-xl font-semibold text-gray-900">
-                                            Add Employee
+                                            Add Informant
                                         </h3>
                                         <button type="button"
-                                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                                            data-modal-hide="add-employee-modal">
+                                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                                            data-modal-hide="add-informant-modal">
                                             <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                                 fill="none" viewBox="0 0 14 14">
                                                 <path stroke="currentColor" stroke-linecap="round"
@@ -232,41 +232,42 @@
                                         <!-- Modal body -->
                                         <div class="p-4 md:p-5 space-y-4">
 
-                                                <div class="mb-3">
-                                                <label for="employee_id"
+                                            <div class="mb-3">
+                                                <label for="full_name"
                                                     class="block mb-2 text-sm font-medium text-gray-900">
-                                                    Employee ID
+                                                    Full Name
                                                 </label>
-                                                <input type="text" id="employee_id" name="employee_id"
+                                                <input type="text" id="full_name" name="full_name"
                                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                                     placeholder="" required />
-                                            </div>
-                                                <div class="mb-3">
-                                                <label for="username"
-                                                    class="block mb-2 text-sm font-medium text-gray-900">
-                                                    Username
-                                                </label>
-                                                <input type="text" id="username" name="username"
-                                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                                    placeholder="" required />
+                                                <p id="helper-text-explanation" class="mt-2 text-sm text-gray-500">
+                                                    (Last Name, First Name, Middle Name)
+                                                </p>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="password"
-                                                    class="block mb-2 text-sm font-medium text-gray-900">Password</label>
-                                                <input type="password" id="password" name="password"
+                                                <label for="phone"
+                                                    class="block mb-2 text-sm font-medium text-gray-900">Phone
+                                                    number</label>
+                                                <input type="text" id="phone"
                                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                                    placeholder="09000000000"
                                                     required />
                                             </div>
                                             <div class="mb-3">
-                                                <label for="confirm_password"
-                                                    class="block mb-2 text-sm font-medium text-gray-900">Confirm
-                                                    password</label>
-                                                <input type="password" id="confirm_password" name="confirm_password"
+                                                <label for="email"
+                                                    class="block mb-2 text-sm font-medium text-gray-900">Email
+                                                    address</label>
+                                                <input type="email" id="email"
                                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                                    required />
+                                                    placeholder="john.doe@company.com" required />
                                             </div>
-
-
+                                            <div class="mb-3">
+                                                <label for="address"
+                                                    class="block mb-2 text-sm font-medium text-gray-900">Address</label>
+                                                <textarea id="address" rows="2"
+                                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                                                    placeholder="Write your address here..."></textarea>
+                                            </div>
                                         </div>
                                         <!-- Modal footer -->
                                         <div
@@ -275,7 +276,7 @@
                                                 class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                                                 Submit
                                             </button>
-                                            <button data-modal-hide="add-employee-modal" type="button"
+                                            <button data-modal-hide="add-informant-modal" type="button"
                                                 class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100">
                                                 Close
                                             </button>
@@ -286,54 +287,88 @@
                         </div>
 
                     </div>
-                    <div></div>
+                    <div>
+
+                        <button data-dropdown-toggle="blocks-dropdown"
+                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
+                            type="button">
+                            Block
+                            <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 4 4 4-4" />
+                            </svg>
+                        </button>
+
+                        <!-- Dropdown menu -->
+                        <div id="blocks-dropdown"
+                            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                            <ul class="py-2 text-sm text-gray-700" aria-labelledby="blocks-dropdown">
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100">Block 1</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100">Block 2</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100">Block 3</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100">Block 4</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100">Block 5</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
                 </div>
                 <table class="w-full text-sm text-left rtl:text-right text-gray-500 data-table">
                     <thead class="text-xs text-gray-700 uppercase">
                         <tr>
-                            <th scope="col" class="px-6 py-3">Employee ID</th>
-                            <th scope="col" class="px-6 py-3">Username</th>
-                            <th scope="col" class="px-6 py-3">Role</th> <!-- changed this to role   -->
+                            <th scope="col" class="px-6 py-3">Name</th>
+                            <th scope="col" class="px-6 py-3">Address</th>
+                            <th scope="col" class="px-6 py-3">Contact #</th>
+                            <th scope="col" class="px-6 py-3">Email</th>
+                            <th scope="col" class="px-6 py-3">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="border-b hover:bg-gray-50">
                             <th scope="row" class="px-6 !py-4 font-medium text-gray-900 whitespace-nowrap">
-                                124125123
+                                Juan D. tamad
                             </th>
-                            <td class="px-6 !py-4">juantamad</td>
-                            <td class="px-6 !py-4">User</td>
+                            <td class="px-6 !py-4">Brgy. Lamot 1</td>
+                            <td class="px-6 !py-4">09123564317</td>
+                            <td class="px-6 !py-4">juandtamad@gmail.com</td>
+                            <td class="px-6 !py-4">
+                                <a href="#"
+                                    class="text-xs font-medium text-info hover:text-white border border-info hover:bg-info focus:ring-4 focus:outline-none focus:ring-info font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2">
+                                    <!-- <svg class="flex-shrink-0 w-5 h-5 text-info transition duration-75 group-hover:text-white me-2" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 576 512">
+                                      <path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"/>
+                                    </svg> -->
+                                    View Deceased Persons
+                                </a>
+                                <a href="#"
+                                    class="text-xs font-medium text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-info font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                    <!-- <svg class="flex-shrink-0 w-5 h-5 text-info transition duration-75 group-hover:text-white me-2" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 576 512">
+                                      <path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"/>
+                                    </svg> -->
+                                    Edit
+                                </a>
+
+                            </td>
+
 
                         </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <th scope="row" class="px-6 !py-4 font-medium text-gray-900 whitespace-nowrap">
-                                124125123
-                            </th>
-                            <td class="px-6 !py-4">juantamad</td>
-                            <td class="px-6 !py-4">User</td>
 
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <th scope="row" class="px-6 !py-4 font-medium text-gray-900 whitespace-nowrap">
-                                124125123
-                            </th>
-                            <td class="px-6 !py-4">juantamad</td>
-                            <td class="px-6 !py-4">User</td>
 
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <th scope="row" class="px-6 !py-4 font-medium text-gray-900 whitespace-nowrap">
-                                124125123
-                            </th>
-                            <td class="px-6 !py-4">juantamad</td>
-                            <td class="px-6 !py-4">User</td>
-
-                        </tr>
                         <!-- if the table is empty use this code -->
                         <!-- 
                         // colspan = number of columns
                         <tr class="border-b hover:bg-gray-50">
-                            <td class="px-6 !py-4" colspan="3">No Data</td> 
+                            <td class="px-6 py-4" colspan="3">No Data</td> 
                         </tr>
 
                        -->
