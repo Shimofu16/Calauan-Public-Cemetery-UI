@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PCC-IMS - Profile</title>
+    <title>PCC-IMS - Informants</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -16,6 +16,8 @@
                         secondary: "#F7F7F7",
                         darker: "#191B1E",
                         info: "#17a2b8", // Added info color
+                        skyblue: "#87CEEB",
+                        mutedYellow: "#EBD4A2",
                     },
                     screens: {
                         tablet: "769px", // Custom tablet breakpoint
@@ -25,8 +27,7 @@
         };
     </script>
 
-    <!-- <link rel="stylesheet" href="../../Assets/datatables/dataTables.tailwindcss.min.css" />
-    <link rel="stylesheet" href="../../Assets/jquery/jquery.dataTables.min.css" /> -->
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
     <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
 </head>
@@ -156,10 +157,11 @@
                 </li>
                 <li>
                     <a href="informants_index.html"
-                        class="flex items-center p-2 text-primary rounded-lg hover:bg-primary hover:text-white group">
-                        <svg class="flex-shrink-0 w-5 h-5 text-primary transition duration-75 group-hover:text-white "
+                        class="flex items-center p-2 text-white bg-primary rounded-lg hover:bg-primary hover:text-white group">
+                        <svg class="w-5 h-5 text-white bg-primary transition duration-75 group-hover:text-white "
                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             viewBox="0 0 640 512">
+
                             <path
                                 d="M72 88a56 56 0 1 1 112 0A56 56 0 1 1 72 88zM64 245.7C54 256.9 48 271.8 48 288s6 31.1 16 42.3V245.7zm144.4-49.3C178.7 222.7 160 261.2 160 304c0 34.3 12 65.8 32 90.5V416c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V389.2C26.2 371.2 0 332.7 0 288c0-61.9 50.1-112 112-112h32c24 0 46.2 7.5 64.4 20.3zM448 416V394.5c20-24.7 32-56.2 32-90.5c0-42.8-18.7-81.3-48.4-107.7C449.8 183.5 472 176 496 176h32c61.9 0 112 50.1 112 112c0 44.7-26.2 83.2-64 101.2V416c0 17.7-14.3 32-32 32H480c-17.7 0-32-14.3-32-32zm8-328a56 56 0 1 1 112 0A56 56 0 1 1 456 88zM576 245.7v84.7c10-11.3 16-26.1 16-42.3s-6-31.1-16-42.3zM320 32a64 64 0 1 1 0 128 64 64 0 1 1 0-128zM240 304c0 16.2 6 31 16 42.3V261.7c-10 11.3-16 26.1-16 42.3zm144-42.3v84.7c10-11.3 16-26.1 16-42.3s-6-31.1-16-42.3zM448 304c0 44.7-26.2 83.2-64 101.2V448c0 17.7-14.3 32-32 32H288c-17.7 0-32-14.3-32-32V405.2c-37.8-18-64-56.5-64-101.2c0-61.9 50.1-112 112-112h32c61.9 0 112 50.1 112 112z" />
                         </svg>
@@ -176,6 +178,7 @@
                         <svg class="flex-shrink-0 w-5 h-5 text-primary transition duration-75 group-hover:text-white "
                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             viewBox="0 0 640 512">
+
                             <path
                                 d="M0 224.2C0 100.6 100.2 0 224 0h24c95.2 0 181.2 69.3 197.3 160.2c2.3 13 6.8 25.7 15.1 36l42 52.6c6.2 7.8 9.6 17.4 9.6 27.4c0 24.2-19.6 43.8-43.8 43.8H448v0 32L339.2 365.6c-11 1.4-19.2 10.7-19.2 21.8c0 11.6 9 21.2 20.6 21.9L448 416v16c0 26.5-21.5 48-48 48H320v8c0 13.3-10.7 24-24 24H256v0H96c-17.7 0-32-14.3-32-32V407.3c0-16.7-6.9-32.5-17.1-45.8C16.6 322.4 0 274.1 0 224.2zm352-.2a32 32 0 1 0 0-64 32 32 0 1 0 0 64zM464 384a24 24 0 1 1 48 0 24 24 0 1 1 -48 0zm152-24a24 24 0 1 1 0 48 24 24 0 1 1 0-48zM592 480a24 24 0 1 1 48 0 24 24 0 1 1 -48 0zM552 312a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm40-24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0zM552 408a24 24 0 1 1 0 48 24 24 0 1 1 0-48z" />
                         </svg>
@@ -193,48 +196,165 @@
 
     <div class="p-4 sm:ml-64">
         <div class="p-4 rounded-lg mt-14">
-            <h1 class="text-3xl text-primary font-semibold mb-4 ">Profile</h1>
+            <h1 class="text-3xl text-primary font-semibold mb-4 ">Add Deceased Person - Select Block and Lot</h1>
             <div class="bg-white rounded p-5">
-                <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                    <div class="max-w-xl">
-                        <form>
-                            <div class="mb-3">
-                                <label for="current_password"
-                                    class="block mb-2 text-sm font-medium text-gray-900">Current password</label>
-                                <input type="password" id="current_password" name="current_password"
-                                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                    required />
-                            </div>
-                            <div class="mb-3">
-                                <label for="new_password" class="block mb-2 text-sm font-medium text-gray-900">New
-                                    password</label>
-                                <input type="password" id="new_password" name="new_password"
-                                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                    required />
-                                <div id="password-strength" class="mt-2 text-sm h-2 rounded-lg bg-gray-200">
-                                    <div id="password-strength-bar" class="h-full rounded-lg"></div>
-                                </div>
-                                <div id="password-strength-text" class="mt-1 text-sm h-2">
-
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="confirm_password"
-                                    class="block mb-2 text-sm font-medium text-gray-900">Confirm new password</label>
-                                <input type="password" id="confirm_password"
-                                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                    required />
-                            </div>
-                            <button type="submit"
-                                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                                Save changes
-                            </button>
-                        </form>
-
-
+                <div class="flex justify-between items-center mb-5">
+                    <div>
 
                     </div>
+                    <div>
+                        <a href="informant_view.html"
+                            class="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                            Back to Deceased Persons List
+                        </a>
+                    </div>
                 </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="flex flex-col">
+                        <div class="flex justify-between items-center">
+                            <div class="flex justify-between items-center gap-2">
+                                <div class="px-3 py-4 rounded shadow text-white bg-skyblue">
+                                    <h1 class="text-center text-2xl">
+                                        Occupied Count
+                                    </h1>
+                                    <h1 class="text-center text-2xl">
+                                        2
+                                    </h1>
+                                </div>
+                                <div class="px-3 py-4 rounded shadow text-white bg-mutedYellow">
+                                    <h1 class="text-center text-2xl">
+                                        Occupied Count
+                                    </h1>
+                                    <h1 class="text-center text-2xl">
+                                        1
+                                    </h1>
+                                </div>
+
+
+                            </div>
+                            <div>
+
+                                <button data-dropdown-toggle="blocks-dropdown"
+                                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
+                                    type="button">
+                                    Select Block
+                                    <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 10 6">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m1 1 4 4 4-4" />
+                                    </svg>
+                                </button>
+
+                                <!-- Dropdown menu -->
+                                <div id="blocks-dropdown"
+                                    class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                                    <ul class="py-2 text-sm text-gray-700" aria-labelledby="blocks-dropdown">
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Block 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Block 2</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Block 3</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Block 4</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Block 5</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <table class="w-full text-sm text-left rtl:text-right text-gray-500 data-table">
+                            <thead class="text-xs text-gray-700 uppercase">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3">Block #</th>
+                                    <th scope="col" class="px-6 py-3">Lot #</th>
+                                    <th scope="col" class="px-6 py-3">Occupied Count</th>
+                                    <th scope="col" class="px-6 py-3">Action</th> <!-- changed this to role   -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b hover:bg-gray-50">
+                                    <th scope="row" class="px-6 !py-4 font-medium text-gray-900 whitespace-nowrap">
+                                        Block 1
+                                    </th>
+                                    <td class="px-6 !py-4">Lot 1</td>
+                                    <td class="px-6 !py-4">0</td>
+                                    <td class="px-6 !py-4">
+                                        <a href="informants_create_form.html"
+                                            class="text-xs font-medium text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-info font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                            Add Deceased Person
+                                        </a>
+                                    </td>
+                                </tr>
+                                <!-- Ternary operator: https://www.geeksforgeeks.org/php-ternary-operator/ -->
+                                <!-- (count >= 2) ? "bg-skyblue rounded" : ((count >= 1) ? "bg-mutedYellow rounded" : "hover:bg-gray-50") -->
+                                <tr class="border-b bg-skyblue rounded">
+                                    <th scope="row" class="px-6 !py-4 font-medium text-gray-900 whitespace-nowrap">
+                                        Block 1
+                                    </th>
+                                    <td class="px-6 !py-4">Lot 2</td>
+                                    <td class="px-6 !py-4">2</td>
+                                    <td class="px-6 !py-4">
+                                        <!-- <a href="informants_create_form.html"
+                                            class="text-xs font-medium text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-info font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                            Add Deceased Person
+                                        </a> -->
+                                    </td>
+
+
+                                </tr>
+                                <tr class="border-b bg-mutedYellow rounded">
+                                    <th scope="row" class="px-6 !py-4 font-medium text-gray-900 whitespace-nowrap">
+                                        Block 2
+                                    </th>
+                                    <td class="px-6 !py-4">Lot 1</td>
+                                    <td class="px-6 !py-4">1</td>
+                                    <td class="px-6 !py-4">
+                                        <a href="informants_create_form.html"
+                                            class="text-xs font-medium text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-info font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                            Add Deceased Person
+                                        </a>
+                                    </td>
+
+                                </tr>
+                                <tr class="border-b bg-skyblue rounded">
+                                    <th scope="row" class="px-6 !py-4 font-medium text-gray-900 whitespace-nowrap">
+                                        Block 2
+                                    </th>
+                                    <td class="px-6 !py-4">Lot 2</td>
+                                    <td class="px-6 !py-4">2</td>
+                                    <td class="px-6 !py-4">
+                                        <!-- <a href="informants_create_form.html"
+                                            class="text-xs font-medium text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-info font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                            Add Deceased Person
+                                        </a> -->
+                                    </td>
+
+                                </tr>
+
+                                <!-- if the table is empty use this code -->
+                                <!-- 
+                                // colspan = number of columns
+                                <tr class="border-b hover:bg-gray-50">
+                                    <td class="px-6 !py-4" colspan="3">No Data</td> 
+                                </tr>
+        
+                               -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <img src="../../Assets/images/CemeteryMap.jpg" alt="map" class="h-96 w-full rounded shadow">
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -243,71 +363,6 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
-    <script src="../../Assets/jquery/jquery.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('#new_password').on('input', function () {
-                var password = $(this).val();
-                var strength = getPasswordStrength(password);
-                updateStrengthBar(strength);
-            });
-
-            function getPasswordStrength(password) {
-                var strength = 0;
-                if (password.length >= 8) strength += 1;
-                if (password.match(/[a-z]+/)) strength += 1;
-                if (password.match(/[A-Z]+/)) strength += 1;
-                if (password.match(/[0-9]+/)) strength += 1;
-                if (password.match(/[\W]+/)) strength += 1;
-                return strength;
-            }
-
-            function updateStrengthBar(strength) {
-                var strengthBar = $('#password-strength-bar');
-                var strengthText = $('#password-strength-text');
-
-                // Reset classes
-                strengthBar.removeClass();
-                strengthText.removeClass();
-                strengthBar.addClass('h-full rounded-lg transition-all duration-300');
-                strengthText.addClass('transition-all duration-300');
-
-                switch (strength) {
-                    case 1:
-                        strengthBar.addClass('bg-red-500 w-1/5');
-                        strengthText.addClass('text-red-500');
-                        strengthText.text('Weak');
-                        break;
-                    case 2:
-                        strengthBar.addClass('bg-orange-500 w-2/5');
-                        strengthText.addClass('text-orange-500');
-                        strengthText.text('Fair');
-                        break;
-                    case 3:
-                        strengthBar.addClass('bg-yellow-500 w-3/5');
-                        strengthText.addClass('text-yellow-500');
-                        strengthText.text('Moderate');
-                        break;
-                    case 4:
-                        strengthBar.addClass('bg-green-400 w-4/5');
-                        strengthText.addClass('text-green-400');
-                        strengthText.text('Strong');
-                        break;
-                    case 5:
-                        strengthBar.addClass('bg-green-600 w-full');
-                        strengthText.addClass('text-green-600');
-                        strengthText.text('Very Strong');
-                        break;
-                    default:
-                        strengthBar.addClass('bg-gray-200 w-0');
-                        strengthText.addClass('text-gray-500');
-                        strengthText.text('Password Strength');
-                }
-            }
-
-        });
-    </script>
-
 
 </body>
 
